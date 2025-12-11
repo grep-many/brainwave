@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
 @import "tailwindcss";
 
+:root{
+  color-scheme: dark;
+}
+
 @theme {
   --color-color-1: #AC6AFF;
   --color-color-2: #FFC876;
@@ -20,10 +24,10 @@
   --color-n-7: #15131D;
   --color-n-8: #0E0C15;
   --color-n-9: #474060;
-  --color-n-0: #43435C;
-  --color-n-1: #1B1B2E;
-  --color-n-2: #2E2A41;
-  --color-n-3: #6C7275;
+  --color-n-10: #43435C;
+  --color-n-11: #1B1B2E;
+  --color-n-12: #2E2A41;
+  --color-n-13: #6C7275;
 
   --font-sora: "Sora", sans-serif;
   --font-code: "Fira Code", monospace;
@@ -95,7 +99,7 @@
 }
 
 @utility button {
-  @apply font-code text-xs font-bold uppercase tracking-wider;
+  @apply font-code text-xs font-bold uppercase tracking-wider cursor-pointer;
 }
 
 @utility bg-radial-gradient {

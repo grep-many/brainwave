@@ -1,7 +1,11 @@
+import ButtonGradient from "./assets/svg/ButtonGradient";
+import Header from "./components/Header";
+
 const App = () => (
-  <div className="container bg-radial-gra text-black transition">
-    <p className="border-red-500 border">App</p>
-  </div>
+  <>
+    <Header/>
+    <ButtonGradient/>
+  </>
 );
 
 export default App;
