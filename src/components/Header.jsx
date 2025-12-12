@@ -3,7 +3,7 @@ import { navigation } from "@/constants";
 import { useLocation } from "react-router";
 import Button from "./Button";
 import MenuSvg from "@/assets/svg/MenuSvg";
-import { HamburgerMenu } from "@/design/Header";
+import { HamburgerMenu } from "@/components/design/Header";
 import React from "react";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   const toggleNav = () => {
     const body = document.getElementById("root");
     if (openNavigation) {
-      body.removeAttribute("style")
+      body.removeAttribute("style");
       return setOpenNavigation(false);
     }
     body.style.overflow = "hidden";
@@ -25,17 +25,17 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-full border-b backdrop-blur-sm ${openNavigation && "bg-n-8"}`}
+      className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-screen border-b backdrop-blur-sm ${openNavigation && "bg-n-8"}`}
     >
       <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
-        <a href="#hero" className="block w-48 xl:mr-8">
+        <a href="#hero" className="block w-48 xl:mr-8" onClick={handleClick}>
           <img src={brainwave} alt="Brainwave" width={190} height={40} />
         </a>
 
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } bg-n-8 fixed top-20 right-0 bottom-0 left-0 lg:static lg:mx-auto lg:flex lg:bg-transparent`}
+          } bg-n-8 fixed top-20 right-0 bottom-0 left-0 max-md:h-fit lg:static lg:mx-auto lg:flex lg:bg-transparent`}
         >
           <div className="relative z-2 m-auto flex flex-col items-center justify-center lg:flex-row">
             {navigation.map((item) => (
@@ -51,7 +51,7 @@ const Header = () => {
               >
                 {item.title}
                 <span
-                  className={`absolute bottom-1/4 md:bottom-1/3 left-1/2 -translate-x-1/2 rounded-full transition-all ${item.url === pathname.hash ? "h-[1.5px] w-1/3":"w-0"} bg-white`}
+                  className={`absolute bottom-1/4 left-1/2 -translate-x-1/2 rounded-full transition-all md:bottom-1/3 ${item.url === pathname.hash ? "h-[1.5px] w-1/3" : "w-0"} bg-white`}
                 />
               </a>
             ))}

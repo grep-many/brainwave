@@ -33,4 +33,4 @@ const navigation = [
   },
 ];
 
-export default navigation
+export default navigation;

@@ -3,59 +3,63 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
 @import "tailwindcss";
 
-:root{
+:root {
   color-scheme: dark;
 }
 
 @theme {
-  --color-color-1: #AC6AFF;
-  --color-color-2: #FFC876;
-  --color-color-3: #FF776F;
-  --color-color-4: #7ADB78;
-  --color-color-5: #858DFF;
-  --color-color-6: #FF98E2;
-  --color-stroke-1: #26242C;
-  --color-n-1: #FFFFFF;
-  --color-n-2: #CAC6DD;
-  --color-n-3: #ADA8C3;
+  --color-color-1: #ac6aff;
+  --color-color-2: #ffc876;
+  --color-color-3: #ff776f;
+  --color-color-4: #7adb78;
+  --color-color-5: #858dff;
+  --color-color-6: #ff98e2;
+  --color-stroke-1: #26242c;
+  --color-n-1: #ffffff;
+  --color-n-2: #cac6dd;
+  --color-n-3: #ada8c3;
   --color-n-4: #757185;
-  --color-n-5: #3F3A52;
+  --color-n-5: #3f3a52;
   --color-n-6: #252134;
-  --color-n-7: #15131D;
-  --color-n-8: #0E0C15;
+  --color-n-7: #15131d;
+  --color-n-8: #0e0c15;
   --color-n-9: #474060;
-  --color-n-10: #43435C;
-  --color-n-11: #1B1B2E;
-  --color-n-12: #2E2A41;
-  --color-n-13: #6C7275;
+  --color-n-10: #43435c;
+  --color-n-11: #1b1b2e;
+  --color-n-12: #2e2a41;
+  --color-n-13: #6c7275;
 
   --font-sora: "Sora", sans-serif;
   --font-code: "Fira Code", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;
 
-  --tracking-tagline: .15em;
+  --tracking-tagline: 0.15em;
 
   --spacing-0.25: 0.0625rem;
   --spacing-7.5: 1.875rem;
   --spacing-15: 3.75rem;
 }
 
-@layer base{
-  html{
+@layer base {
+  *::selection {
+    @apply bg-purple-950 text-white;
+  }
+
+  html {
     scroll-behavior: smooth;
   }
 
-  body{
-    @apply font-sans bg-n-8 text-n-1 text-base;
+  body {
+    @apply bg-n-8 text-n-1 pt-19 font-sans text-base lg:pt-21;
   }
 }
 
 @utility container {
-  @apply max-w-310 mx-auto px-5 md:px-10 lg:px-15 xl:max-w-350;
+  @apply mx-auto max-w-310 px-5 md:px-10 lg:px-15 xl:max-w-350;
 }
 
 @utility h1 {
-  @apply font-semibold text-[2.5rem] leading-13 md:text-[2.75rem] md:leading-15 lg:text-[3.25rem] lg:leading-16.25 xl:text-[3.75rem] xl:leading-18;
+  @apply text-[2.5rem] leading-13 font-semibold md:text-[2.75rem] md:leading-15 lg:text-[3.25rem] lg:leading-16.25 xl:text-[3.75rem] xl:leading-18;
 }
 
 @utility h2 {
@@ -75,7 +79,7 @@
 }
 
 @utility h6 {
-  @apply font-semibold text-lg leading-8;
+  @apply text-lg leading-8 font-semibold;
 }
 
 @utility body-1 {
@@ -83,7 +87,7 @@
 }
 
 @utility body-2 {
-  @apply font-light text-[0.875rem] leading-6 md:text-base;
+  @apply text-[0.875rem] leading-6 font-light md:text-base;
 }
 
 @utility caption {
@@ -91,7 +95,7 @@
 }
 
 @utility tagline {
-  @apply font-grotesk font-light text-xs tracking-tagline uppercase;
+  @apply font-grotesk tracking-tagline text-xs font-light uppercase;
 }
 
 @utility quote {
@@ -99,7 +103,7 @@
 }
 
 @utility button {
-  @apply font-code text-xs font-bold uppercase tracking-wider cursor-pointer;
+  @apply font-code cursor-pointer text-xs font-bold tracking-wider uppercase;
 }
 
 @utility bg-radial-gradient {
@@ -107,7 +111,7 @@
 }
 
 @utility bg-conic-gradient {
-  background-image: conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876);
+  background-image: conic-gradient(from 225deg, #ffc876, #79fff7, #9f53ff, #ff98e2, #ffc876);
 }
 
 @utility bg-benefit-card-1 {
