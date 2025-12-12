@@ -50,6 +50,9 @@ const Header = () => {
                 } lg:hover:text-n-1 lg:leading-5 xl:px-12`}
               >
                 {item.title}
+                <span
+                  className={`absolute bottom-1/4 md:bottom-1/3 left-1/2 -translate-x-1/2 rounded-full transition-all ${item.url === pathname.hash ? "h-[1.5px] w-1/3":"w-0"} bg-white`}
+                />
               </a>
             ))}
           </div>
@@ -63,7 +66,7 @@ const Header = () => {
         >
           New account
         </a>
-        <Button href="#login" className="hidden lg:flex">
+        <Button href="#login" className="hidden! lg:flex!">
           sign in
         </Button>
         <Button className="ml-auto lg:hidden" px="px-3" onClick={toggleNav}>
