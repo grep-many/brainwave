@@ -38,6 +38,20 @@
   --spacing-0.25: 0.0625rem;
   --spacing-7.5: 1.875rem;
   --spacing-15: 3.75rem;
+
+  --animate-float-in: float-in 10s ease-out forwards;
+
+  @keyframes float-in {
+    from {
+      transform: translateY(2.5rem);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
 
 @layer base {

@@ -1,101 +1,62 @@
-import { useEffect, useState } from "react";
 import { MouseParallax } from "react-just-parallax";
 
 import PlusSvg from "@/assets/svg/PlusSvg";
 
-export const Gradient = () => {
-  return (
-    <>
-      <div className="bg-n-11 relative z-1 mx-2.5 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-8 lg:h-6" />
-      <div className="bg-n-11/70 relative z-1 mx-6 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-20 lg:h-6" />
-    </>
-  );
-};
+export const Gradient = () => (
+  <>
+    <div className="bg-n-11 relative z-1 mx-2.5 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-8 lg:h-6" />
+    <div className="bg-n-11/70 relative z-1 mx-6 h-6 rounded-b-[1.25rem] shadow-xl lg:mx-20 lg:h-6" />
+  </>
+);
 
-export const BottomLine = () => {
-  return (
-    <>
-      <div className="bg-n-6 pointer-events-none absolute top-221 right-10 left-10 hidden h-0.25 xl:block" />
+export const BottomLine = () => (
+  <>
+    <div className="bg-n-6 pointer-events-none absolute top-221 right-10 left-10 hidden h-0.25 xl:block" />
 
-      <PlusSvg className="pointer-events-none absolute top-219.75 left-8.75 z-2 hidden xl:block" />
+    <PlusSvg className="pointer-events-none absolute top-219.75 left-8.75 z-2 hidden xl:block" />
 
-      <PlusSvg className="pointer-events-none absolute top-219.75 right-8.75 z-2 hidden xl:block" />
-    </>
-  );
-};
+    <PlusSvg className="pointer-events-none absolute top-219.75 right-8.75 z-2 hidden xl:block" />
+  </>
+);
 
-const Rings = () => {
-  return (
-    <>
-      <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-263.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
-      <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-205.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
-      <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-144.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
-      <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-92.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
-    </>
-  );
-};
+const Rings = () => (
+  <>
+    <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-263.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
+    <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-205.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
+    <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-144.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
+    <div className="border-n-2/10 absolute top-1/2 left-1/2 aspect-square w-92.5 -translate-x-1/2 -translate-y-1/2 rounded-full border" />
+  </>
+);
 
-export const BackgroundCircles = ({ parallaxRef }) => {
-  const [mounted, setMounted] = useState(false);
+export const BackgroundCircles = ({ parallaxRef }) => (
+  <div className="border-n-2/5 absolute -top-169.5 left-1/2 aspect-square w-312 -translate-x-1/2 rounded-full border md:-top-154 xl:-top-128">
+    <Rings />
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+    {/* Moving background colored circle balls */}
+    <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-46">
+        <div className="animate-float-in -mt-36 -ml-1 h-2 w-2 rounded-full bg-linear-to-b from-[#DD734F] to-[#1A1A32] transition-transform duration-500 ease-out" />
+      </div>
 
-  return (
-    <div className="border-n-2/5 absolute -top-169.5 left-1/2 aspect-square w-312 -translate-x-1/2 rounded-full border md:-top-154 xl:-top-128">
-      <Rings />
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-56">
+        <div className="animate-float-in -mt-32 -ml-1 h-4 w-4 rounded-full bg-linear-to-b from-[#DD734F] to-[#1A1A32] transition-transform duration-500 ease-out" />
+      </div>
 
-      {/* Moving background colored circle balls */}
-      <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-46">
-          <div
-            className={`-mt-36 -ml-1 h-2 w-2 rounded-full bg-linear-to-b from-[#DD734F] to-[#1A1A32] transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-54">
+        <div className="transit animate-float-in mt-[12.9rem] -ml-1 hidden h-4 w-4 rounded-full bg-linear-to-b from-[#B9AEDF] to-[#1A1A32] transition-transform duration-500 ease-out xl:block" />
+      </div>
 
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-56">
-          <div
-            className={`-mt-32 -ml-1 h-4 w-4 rounded-full bg-linear-to-b from-[#DD734F] to-[#1A1A32] transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-65">
+        <div className="animate-float-in mt-52 -ml-1.5 h-3 w-3 rounded-full bg-linear-to-b from-[#B9AEDF] to-[#1A1A32] transition-transform duration-500 ease-out" />
+      </div>
 
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-54">
-          <div
-            className={`transit mt-[12.9rem] -ml-1 hidden h-4 w-4 rounded-full bg-linear-to-b from-[#B9AEDF] to-[#1A1A32] transition-transform duration-500 ease-out xl:block ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-85">
+        <div className="animate-float-in -mt-3 -ml-3 h-6 w-6 rounded-full bg-linear-to-b from-[#88E5BE] to-[#1A1A32] transition-transform duration-500 ease-out" />
+      </div>
 
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-65">
-          <div
-            className={`mt-52 -ml-1.5 h-3 w-3 rounded-full bg-linear-to-b from-[#B9AEDF] to-[#1A1A32] transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
-
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom -rotate-85">
-          <div
-            className={`-mt-3 -ml-3 h-6 w-6 rounded-full bg-linear-to-b from-[#88E5BE] to-[#1A1A32] transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
-
-        <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-70">
-          <div
-            className={`-mt-3 -ml-3 h-6 w-6 rounded-full bg-linear-to-b from-[#88E5BE] to-[#1A1A32] transition-transform duration-500 ease-out ${
-              mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          />
-        </div>
-      </MouseParallax>
-    </div>
-  );
-};
+      <div className="absolute bottom-1/2 left-1/2 h-1/2 w-0.25 origin-bottom rotate-70">
+        <div className="animate-float-in -mt-3 -ml-3 h-6 w-6 rounded-full bg-linear-to-b from-[#88E5BE] to-[#1A1A32] transition-transform duration-500 ease-out" />
+      </div>
+    </MouseParallax>
+  </div>
+);
