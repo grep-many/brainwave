@@ -10,7 +10,10 @@ const Header = () => {
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = React.useState(true);
 
-  const handleClick = () => setOpenNavigation(false);
+  const handleClick = async (e, url) => {
+    if (!document.querySelector(url)) return e.preventDefault();
+    setOpenNavigation(false);
+  };
 
   const toggleNav = () => {
     const body = document.getElementById("root");
@@ -28,7 +31,7 @@ const Header = () => {
       className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-screen border-b backdrop-blur-sm ${openNavigation && "bg-n-8"}`}
     >
       <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
-        <a href="#hero" className="block w-48 xl:mr-8" onClick={handleClick}>
+        <a href="#hero" className="block w-48 xl:mr-8" onClick={(e) => handleClick(e, "#hero")}>
           <img src={brainwave} alt="Brainwave" width={190} height={40} />
         </a>
 
@@ -38,20 +41,20 @@ const Header = () => {
           } bg-n-8 fixed top-20 right-0 bottom-0 left-0 max-md:h-fit lg:static lg:mx-auto lg:flex lg:bg-transparent`}
         >
           <div className="relative z-2 m-auto flex flex-col items-center justify-center lg:flex-row">
-            {navigation.map((item) => (
+            {navigation.map(({ id, url, onlyMobile, title }) => (
               <a
-                key={item.id}
-                href={item.url}
-                onClick={handleClick}
+                key={id}
+                href={url}
+                onClick={(e) => handleClick(e, url)}
                 className={`font-code text-n-1 hover:text-color-1 relative block text-2xl uppercase transition-colors ${
-                  item.onlyMobile ? "lg:hidden" : ""
+                  onlyMobile ? "lg:hidden" : ""
                 } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  item.url === pathname.hash ? "lg:text-n-1 z-2" : "lg:text-n-1/50"
+                  url === pathname.hash ? "lg:text-n-1 z-2" : "lg:text-n-1/50"
                 } lg:hover:text-n-1 lg:leading-5 xl:px-12`}
               >
-                {item.title}
+                {title}
                 <span
-                  className={`absolute bottom-1/4 left-1/2 -translate-x-1/2 rounded-full transition-all md:bottom-1/3 ${item.url === pathname.hash ? "h-[1.5px] w-1/3" : "w-0"} bg-white`}
+                  className={`absolute bottom-1/4 left-1/2 -translate-x-1/2 rounded-full transition-all md:bottom-1/3 ${url === pathname.hash ? "h-[1.5px] w-1/3" : "w-0"} bg-white`}
                 />
               </a>
             ))}

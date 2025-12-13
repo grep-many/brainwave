@@ -14,8 +14,8 @@ const Benefits = () => {
           title="Chat Smarter, Not Harder with Brainwave"
         />
 
-        <div className="mb-10 flex flex-wrap gap-10">
-          {benefits.map(({backgroundUrl,id,title,iconUrl,imageUrl,light,text}) => (
+        <div className="mb-10 flex flex-wrap justify-center gap-10">
+          {benefits.map(({ backgroundUrl, id, title, iconUrl, imageUrl, light, text }) => (
             <div
               className="relative block bg-size-[100%_100%] bg-no-repeat p-0.5 md:max-w-[24rem]"
               style={{
