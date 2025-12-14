@@ -15,45 +15,46 @@ const Benefits = () => {
         />
 
         <div className="mb-10 flex flex-wrap justify-center gap-10">
-          {benefits.map(({ backgroundUrl, id, title, iconUrl, imageUrl, light, text }) => (
-            <div
-              className="relative block bg-size-[100%_100%] bg-no-repeat p-0.5 md:max-w-[24rem]"
-              style={{
-                backgroundImage: `url(${backgroundUrl})`,
-              }}
-              key={id}
-            >
-              <div className="pointer-events-none relative z-2 flex min-h-88 flex-col p-[2.4rem]">
-                <h5 className="h5 mb-5">{title}</h5>
-                <p className="body-2 text-n-3 mb-6">{text}</p>
-                <div className="mt-auto flex items-center">
-                  <img src={iconUrl} width={48} height={48} alt={title} />
-                  <p className="font-code text-n-1 ml-auto text-xs font-bold tracking-wider uppercase">
-                    Explore more
-                  </p>
-                  <Arrow />
+          {benefits?.length &&
+            benefits.map(({ backgroundUrl, id, title, iconUrl, imageUrl, light, text }) => (
+              <div
+                className="relative block bg-size-[100%_100%] bg-no-repeat p-0.5 md:max-w-[24rem]"
+                style={{
+                  backgroundImage: `url(${backgroundUrl})`,
+                }}
+                key={id}
+              >
+                <div className="pointer-events-none relative z-2 flex min-h-88 flex-col p-[2.4rem]">
+                  <h5 className="h5 mb-5">{title}</h5>
+                  <p className="body-2 text-n-3 mb-6">{text}</p>
+                  <div className="mt-auto flex items-center">
+                    <img src={iconUrl} width={48} height={48} alt={title} />
+                    <p className="font-code text-n-1 ml-auto text-xs font-bold tracking-wider uppercase">
+                      Explore more
+                    </p>
+                    <Arrow />
+                  </div>
                 </div>
-              </div>
 
-              {light && <GradientLight />}
+                {light && <GradientLight />}
 
-              <div className="bg-n-8 absolute inset-0.5" style={{ clipPath: "url(#benefits)" }}>
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {imageUrl && (
-                    <img
-                      src={imageUrl}
-                      width={380}
-                      height={362}
-                      alt={title}
-                      className="h-full w-full object-cover"
-                    />
-                  )}
+                <div className="bg-n-8 absolute inset-0.5" style={{ clipPath: "url(#benefits)" }}>
+                  <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
+                    {imageUrl && (
+                      <img
+                        src={imageUrl}
+                        width={380}
+                        height={362}
+                        alt={title}
+                        className="h-full w-full object-cover"
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <ClipPath />
-            </div>
-          ))}
+                <ClipPath />
+              </div>
+            ))}
         </div>
       </div>
     </Section>

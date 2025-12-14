@@ -3,9 +3,9 @@ import ChatBubbleWing from "../../assets/svg/ChatBubbleWing";
 
 export const Gradient = () => {
   return (
-    <div className="pointer-events-none absolute top-0 -left-[10rem] h-[56.625rem] w-[56.625rem] opacity-50 mix-blend-color-dodge">
+    <div className="pointer-events-none absolute top-0 -left-40 h-226.5 w-226.5 opacity-50 mix-blend-color-dodge">
       <img
-        className="absolute top-1/2 left-1/2 h-[88.5625rem] w-[79.5625rem] max-w-[79.5625rem] -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-1/2 left-1/2 h-354.25 w-318.25 max-w-318.25 -translate-x-1/2 -translate-y-1/2"
         src={gradient}
         width={1417}
         height={1417}
@@ -17,7 +17,7 @@ export const Gradient = () => {
 
 export const PhotoChatMessage = () => {
   return (
-    <div className="font-code absolute top-8 right-8 max-w-[17.5rem] rounded-t-xl rounded-bl-xl bg-black px-8 py-6 text-base lg:top-16 lg:right-[8.75rem] lg:max-w-[17.5rem]">
+    <div className="font-code absolute top-8 right-8 max-w-70 rounded-t-xl rounded-bl-xl bg-black px-8 py-6 text-base lg:top-16 lg:right-35 lg:max-w-70">
       Hey Brainwave, enhance this photo
       <ChatBubbleWing className="absolute bottom-0 left-full" />
     </div>
@@ -26,9 +26,9 @@ export const PhotoChatMessage = () => {
 
 export const VideoChatMessage = () => {
   return (
-    <div className="bg-n-6 font-code absolute top-8 left-[3.125rem] w-full max-w-[14rem] rounded-t-xl rounded-br-xl pt-2.5 pr-2.5 pb-7 pl-5 text-base md:max-w-[17.5rem]">
+    <div className="bg-n-6 font-code absolute top-8 left-12.5 w-full max-w-56 rounded-t-xl rounded-br-xl pt-2.5 pr-2.5 pb-7 pl-5 text-base md:max-w-70">
       Video generated!
-      <div className="bg-color-1 absolute -bottom-[1.125rem] left-5 flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.75rem]">
+      <div className="bg-color-1 absolute -bottom-4.5 left-5 flex h-9 w-9 items-center justify-center rounded-xl">
         <img src={brainwaveWhiteSymbol} width={26} height={26} alt="Brainwave" />
       </div>
       <p className="tagline text-n-3 absolute right-2.5 bottom-1 text-[0.625rem] uppercase">

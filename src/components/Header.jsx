@@ -37,27 +37,28 @@ const Header = () => {
 
         <nav
           className={`${
-            openNavigation ? "flex" : "hidden"
-          } bg-n-8 fixed top-20 right-0 bottom-0 left-0 max-md:h-fit lg:static lg:mx-auto lg:flex lg:bg-transparent`}
+            openNavigation ? "max-lg:h-screen" : " max-lg:h-0"
+          } transition-all flex overflow-hidden bg-n-8 absolute top-19 right-0 bottom-0 left-0 lg:static lg:mx-auto lg:flex lg:bg-transparent`}
         >
-          <div className="relative z-2 m-auto flex flex-col items-center justify-center lg:flex-row">
-            {navigation.map(({ id, url, onlyMobile, title }) => (
-              <a
-                key={id}
-                href={url}
-                onClick={(e) => handleClick(e, url)}
-                className={`font-code text-n-1 hover:text-color-1 relative block text-2xl uppercase transition-colors ${
-                  onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                  url === pathname.hash ? "lg:text-n-1 z-2" : "lg:text-n-1/50"
-                } lg:hover:text-n-1 lg:leading-5 xl:px-12`}
-              >
-                {title}
-                <span
-                  className={`absolute bottom-1/4 left-1/2 -translate-x-1/2 rounded-full transition-all md:bottom-1/3 ${url === pathname.hash ? "h-[1.5px] w-1/3" : "w-0"} bg-white`}
-                />
-              </a>
-            ))}
+          <div className="relative m-auto flex flex-col items-center justify-center lg:flex-row">
+            {navigation?.length &&
+              navigation.map(({ id, url, onlyMobile, title }) => (
+                <a
+                  key={id}
+                  href={url}
+                  onClick={(e) => handleClick(e, url)}
+                  className={`font-code text-n-1 hover:text-color-1 relative block text-2xl uppercase transition-colors ${
+                    onlyMobile ? "lg:hidden" : ""
+                  } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                    url === pathname.hash ? "lg:text-n-1 z-2" : "lg:text-n-1/50"
+                  } lg:hover:text-n-1 lg:leading-5 xl:px-12`}
+                >
+                  {title}
+                  <span
+                    className={`absolute bottom-1/4 left-1/2 -translate-x-1/2 rounded-full transition-all md:bottom-1/3 ${url === pathname.hash ? "h-[1.5px] w-1/3" : "w-0"} bg-white`}
+                  />
+                </a>
+              ))}
           </div>
 
           <HamburgerMenu />

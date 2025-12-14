@@ -61,11 +61,12 @@ const Hero = () => {
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="bg-n-9/40 border-n-1/10 absolute bottom-30 -left-22 hidden animate-[bounce_5s_ease_infinite] rounded-2xl border px-1 py-1 backdrop-blur xl:flex">
-                    {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
-                      </li>
-                    ))}
+                    {heroIcons?.length &&
+                      heroIcons.map((icon, index) => (
+                        <li className="p-5" key={index}>
+                          <img src={icon} width={24} height={25} alt={icon} />
+                        </li>
+                      ))}
                   </ul>
                 </ScrollParallax>
 

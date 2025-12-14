@@ -5,21 +5,22 @@ import Section from "./Section";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
 
 const Collaboration = () => (
-  <Section crosses>
+  <Section crosses className="overflow-x-hidden">
     <div className="container lg:flex">
       <div className="max-w-100">
         <h2 className="h2 mb-4 md:mb-8">AI Chat App for seamless collaboration</h2>
 
         <ul className="mb-10 max-w-88 md:mb-14">
-          {collabContent.map((item) => (
-            <li className="mb-3 py-3" key={item.id}>
-              <div className="flex items-center">
-                <img src={check} width={24} height={24} alt="check" />
-                <h6 className="body-2 ml-5">{item.title}</h6>
-              </div>
-              {item.text && <p className="body-2 text-n-4 mt-3">{item.text}</p>}
-            </li>
-          ))}
+          {collabContent?.length &&
+            collabContent.map(({ id, title, text }) => (
+              <li className="mb-3 py-3" key={id}>
+                <div className="flex items-center">
+                  <img src={check} width={24} height={24} alt="check" />
+                  <h6 className="body-2 ml-5">{title}</h6>
+                </div>
+                {text && <p className="body-2 text-n-4 mt-3">{text}</p>}
+              </li>
+            ))}
         </ul>
 
         <Button>Try it now</Button>
@@ -38,28 +39,21 @@ const Collaboration = () => (
           </div>
 
           <ul>
-            {collabApps.map((app, index) => (
-              <li
-                key={app.id}
-                className={`absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom rotate-${
-                  index * 45
-                }`}
-              >
-                <div
-                  className={`bg-n-7 border-n-1/15 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border -rotate-${
-                    index * 45
-                  }`}
+            {collabApps?.length &&
+              collabApps.map(({ id, width, icon, height, title }, index) => (
+                <li
+                  key={id}
+                  className="absolute top-0 left-1/2 -ml-[1.6rem] h-1/2 origin-bottom"
+                  style={{ transform: `rotate(${index * 45}deg)` }}
                 >
-                  <img
-                    className="m-auto"
-                    width={app.width}
-                    height={app.height}
-                    alt={app.title}
-                    src={app.icon}
-                  />
-                </div>
-              </li>
-            ))}
+                  <div
+                    className="bg-n-7 border-n-1/15 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border "
+                      style={{ transform: `rotate(-${index * 45}deg)` }}
+                  >
+                    <img className="m-auto" width={width} height={height} alt={title} src={icon} />
+                  </div>
+                </li>
+              ))}
           </ul>
 
           <LeftCurve />
