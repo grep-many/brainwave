@@ -1,6 +1,6 @@
 const ButtonSvg = (white) => (
   <>
-    <svg className="absolute top-0 left-0" width="21" height="44" viewBox="0 0 21 44">
+    <svg className="absolute top-0 left-1" width="21" height="44" viewBox="0 0 21 44">
       <path
         fill={white ? "white" : "none"}
         stroke={white ? "white" : "url(#btn-left)"}
@@ -9,7 +9,7 @@ const ButtonSvg = (white) => (
       />
     </svg>
     <svg
-      className="absolute top-0 left-5.25 w-[calc(100%-2.625rem)]"
+      className="absolute top-0 left-6 w-[calc(100%-2.625rem)]"
       height="44"
       viewBox="0 0 100 44"
       preserveAspectRatio="none"
