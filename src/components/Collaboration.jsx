@@ -47,8 +47,8 @@ const Collaboration = () => (
                   style={{ transform: `rotate(${index * 45}deg)` }}
                 >
                   <div
-                    className="bg-n-7 border-n-1/15 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border "
-                      style={{ transform: `rotate(-${index * 45}deg)` }}
+                    className="bg-n-7 border-n-1/15 relative -top-[1.6rem] flex h-[3.2rem] w-[3.2rem] rounded-xl border"
+                    style={{ transform: `rotate(-${index * 45}deg)` }}
                   >
                     <img className="m-auto" width={width} height={height} alt={title} src={icon} />
                   </div>

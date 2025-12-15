@@ -7,6 +7,7 @@ const Benefits = React.lazy(() => import("./components/Benefits"));
 const Collaboration = React.lazy(() => import("./components/Collaboration"));
 const Services = React.lazy(() => import("./components/Services"));
 const Pricing = React.lazy(() => import("./components/Pricing"));
+const Roadmap = React.lazy(() => import("./components/Roadmap"));
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
       <Collaboration />
       <Services />
       <Pricing />
+      <Roadmap />
     </React.Suspense>
   </>
 );

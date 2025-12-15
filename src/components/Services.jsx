@@ -8,7 +8,7 @@ import Generating from "./Generating";
 
 const Services = () => {
   return (
-    <Section id="how-to-use">
+    <Section id="how-to-use" className="overflow-hidden">
       <div className="container">
         <Heading
           title="Generative AI made for creators."
@@ -100,7 +100,7 @@ const Services = () => {
                 </ul>
               </div>
 
-            <div className="bg-n-8 relative h-80 overflow-hidden rounded-xl md:h-100">
+              <div className="bg-n-8 relative h-80 overflow-hidden rounded-xl md:h-100">
                 <img
                   src={service3}
                   className="h-full w-full object-cover"
