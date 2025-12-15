@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Loading from "./components/Loading";
+import Footer from "./components/Footer";
 const ButtonGradient = React.lazy(() => import("./assets/svg/ButtonGradient"));
 const Benefits = React.lazy(() => import("./components/Benefits"));
 const Collaboration = React.lazy(() => import("./components/Collaboration"));
@@ -21,6 +22,7 @@ const App = () => (
       <Pricing />
       <Roadmap />
     </React.Suspense>
+    <Footer/>
   </>
 );
 
