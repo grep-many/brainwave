@@ -37,12 +37,14 @@ You get:
 ## 📦 Tech Stack
 
 ### **Frontend**
+
 - React 19
 - React Router v7
 - TailwindCSS 4
 - react-just-parallax
 
 ### **Developer Tools**
+
 - Vite 7
 - ESLint
 - Prettier + Tailwind plugin
@@ -79,6 +81,7 @@ You get:
 ```
 
 ### 🔧 Customization Note
+
 All product content such as **navigation, pricing plans, benefits, roadmap items, and social links** can be easily modified from the `src/constants/` directory without touching UI components.
 
 ---

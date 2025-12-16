@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-screen border-b backdrop-blur-sm ${openNavigation ? "bg-n-8":""}`}
+      className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-screen border-b backdrop-blur-sm ${openNavigation ? "bg-n-8" : ""}`}
     >
       <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
         <a href="#hero" className="block w-48 xl:mr-8" onClick={(e) => handleClick(e, "#hero")}>
@@ -40,7 +40,7 @@ const Header = () => {
             openNavigation ? "max-lg:h-screen" : "max-lg:h-0"
           } bg-n-8 fixed top-19 right-0 bottom-0 left-0 flex overflow-hidden transition-all lg:static lg:mx-auto lg:flex lg:bg-transparent`}
         >
-          <div className="relative mx-auto max-lg:mt-10 flex flex-col items-center justify-start lg:flex-row">
+          <div className="relative mx-auto flex flex-col items-center justify-start max-lg:mt-10 lg:flex-row">
             {navigation?.length &&
               navigation.map(({ id, url, onlyMobile, title }) => (
                 <a
@@ -48,7 +48,7 @@ const Header = () => {
                   href={url}
                   onClick={(e) => handleClick(e, url)}
                   className={`font-code text-n-1 hover:text-color-1 relative block text-2xl uppercase transition-colors ${
-                    onlyMobile ? "lg:hidden":""
+                    onlyMobile ? "lg:hidden" : ""
                   } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
                     url === pathname.hash ? "lg:text-n-1 z-2" : "lg:text-n-1/50"
                   } lg:hover:text-n-1 lg:leading-5 xl:px-12`}

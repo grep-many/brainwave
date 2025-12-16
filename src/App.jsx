@@ -22,7 +22,7 @@ const App = () => (
       <Pricing />
       <Roadmap />
     </React.Suspense>
-    <Footer/>
+    <Footer />
   </>
 );
 

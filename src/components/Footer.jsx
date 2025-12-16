@@ -10,7 +10,7 @@ const Footer = () => {
         </p>
 
         <ul className="flex flex-wrap gap-5">
-          {socials.map(({id,title,iconUrl,url}) => (
+          {socials.map(({ id, title, iconUrl, url }) => (
             <a
               key={id}
               href={url}
