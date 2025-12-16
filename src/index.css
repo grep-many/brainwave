@@ -128,27 +128,27 @@
   background-image: conic-gradient(from 225deg, #ffc876, #79fff7, #9f53ff, #ff98e2, #ffc876);
 }
 
-@utility bg-benefit-card-1 {
+.bg-benefit-card-1 {
   background-image: url(assets/benefits/card-1.svg);
 }
 
-@utility bg-benefit-card-2 {
+.bg-benefit-card-2 {
   background-image: url(assets/benefits/card-2.svg);
 }
 
-@utility bg-benefit-card-3 {
+.bg-benefit-card-3 {
   background-image: url(assets/benefits/card-3.svg);
 }
 
-@utility bg-benefit-card-4 {
+.bg-benefit-card-4 {
   background-image: url(assets/benefits/card-4.svg);
 }
 
-@utility bg-benefit-card-5 {
+.bg-benefit-card-5 {
   background-image: url(assets/benefits/card-5.svg);
 }
 
-@utility bg-benefit-card-6 {
+.bg-benefit-card-6 {
   background-image: url(assets/benefits/card-6.svg);
 }
 

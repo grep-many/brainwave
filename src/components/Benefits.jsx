@@ -16,12 +16,9 @@ const Benefits = () => {
 
         <div className="mb-10 flex flex-wrap justify-center gap-10">
           {benefits?.length &&
-            benefits.map(({ backgroundUrl, id, title, iconUrl, imageUrl, light, text }) => (
+            benefits.map(({ id, title, iconUrl, imageUrl, light, text }) => (
               <div
-                className="relative block bg-size-[100%_100%] bg-no-repeat p-0.5 md:max-w-[24rem]"
-                style={{
-                  backgroundImage: `url(${backgroundUrl})`,
-                }}
+                className={`relative block bg-size-[100%_100%] bg-no-repeat p-0.5 md:max-w-[24rem] bg-benefit-card-${parseInt(id)+1}`}
                 key={id}
               >
                 <div className="pointer-events-none relative z-2 flex min-h-88 flex-col p-[2.4rem]">
