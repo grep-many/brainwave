@@ -10,8 +10,8 @@ const Header = () => {
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = React.useState(false);
 
-  const handleClick = async (e, url) => {
-    if (!document.querySelector(url)) return e.preventDefault();
+  const handleClick = () => {
+    document.documentElement.removeAttribute("style");
     setOpenNavigation(false);
   };
 
@@ -31,7 +31,7 @@ const Header = () => {
       className={`bg-n-8/90 border-n-6 fixed top-0 z-50 w-screen border-b backdrop-blur-sm ${openNavigation ? "bg-n-8" : ""}`}
     >
       <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
-        <a href="#hero" className="block w-48 xl:mr-8" onClick={(e) => handleClick(e, "#hero")}>
+        <a href="#hero" className="block w-48 xl:mr-8" onClick={handleClick}>
           <img src={brainwave} alt="Brainwave" width={190} height={40} />
         </a>
 
@@ -46,7 +46,7 @@ const Header = () => {
                 <a
                   key={id}
                   href={url}
-                  onClick={(e) => handleClick(e, url)}
+                  onClick={handleClick}
                   className={`font-code text-n-1 hover:text-color-1 relative block text-2xl uppercase transition-colors ${
                     onlyMobile ? "lg:hidden" : ""
                   } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
